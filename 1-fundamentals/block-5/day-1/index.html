@@ -84,6 +84,14 @@
         }
         verifyH1();
 
+        function changeParagraphsToLowerCase() {
+          let paragraphList = document.getElementsByTagName('p');
+          for (let i = 0; i < paragraphList.length; i += 1) {
+            paragraphList[i].innerText = paragraphList[i].innerText.toLowerCase();
+          }
+        }
+        changeParagraphsToLowerCase();
+
     </script>
   </body>
 </html>

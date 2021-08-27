@@ -103,4 +103,15 @@ function dayListeners() {
   }
 }
 
+// Exercicio 7
+
+function createTask() {
+  const span = document.createElement('span');
+  const taskText = document.querySelector('#task-input').value;
+  span.innerHTML = taskText + '<br>';
+  document.querySelector('.my-tasks').appendChild(span);
+}
+
+document.querySelector('#btn-add').addEventListener('click', createTask);
+
 window.onload = dayListeners();

@@ -70,3 +70,17 @@ function mudaCorFeriado() {
 
 //Exercicio 4
 createButton('Sexta-feira', 'btn-friday');
+
+//Exercicio 5
+function highlightFriday() {
+  let fridayList = document.getElementsByClassName('friday');
+  for (let i = 0; i < fridayList.length; i += 1) {
+    if (fridayList[i].style.color === 'blue') {
+      fridayList[i].style.color = 'black';
+    } else {
+    fridayList[i].style.color = 'blue';
+    }
+  }
+}
+
+document.querySelector('#btn-friday').addEventListener('click', highlightFriday);

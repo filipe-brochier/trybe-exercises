@@ -71,12 +71,12 @@ function mudaCorFeriado() {
 //Exercicio 4
 createButton('Sexta-feira', 'btn-friday');
 
-//Exercicio 5
+// Exercicio 5
 function highlightFriday() {
   let fridayList = document.getElementsByClassName('friday');
   for (let i = 0; i < fridayList.length; i += 1) {
     if (fridayList[i].style.color === 'blue') {
-      fridayList[i].style.color = 'black';
+      fridayList[i].style.color = 'grey';
     } else {
     fridayList[i].style.color = 'blue';
     }
@@ -84,3 +84,23 @@ function highlightFriday() {
 }
 
 document.querySelector('#btn-friday').addEventListener('click', highlightFriday);
+
+// Exercicio 6
+
+function zoomIn (event) {
+  if (event.target.style.fontSize === '32px') {
+    event.target.style.fontSize = '20px';
+  } else {
+    event.target.style.fontSize = '32px';
+  }
+}
+
+function dayListeners() {
+  let days = document.querySelectorAll('.day');
+  for (let i = 0; i < days.length; i += 1) {
+    days[i].addEventListener('mouseover', zoomIn);
+    days[i].addEventListener('mouseout', zoomIn);
+  }
+}
+
+window.onload = dayListeners();

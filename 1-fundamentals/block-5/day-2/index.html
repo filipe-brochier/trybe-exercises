@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Exercício 5.2</title>
+    <style>
+      section {
+        border-color: black;
+        border-style: solid;
+      }
+
+      .title {
+        text-align: center;
+      }
+
+      .main-content {
+        background-color: yellow;
+      }
+
+      .main-content .center-content {
+        background-color: red;
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .main-content .center-content p {
+        font-style: italic;
+      }
+
+      .main-content .left-content {
+        background-color: green;
+        width: 60%;
+        margin-left: 0;
+        margin-right: auto;
+      }
+
+      .main-content .left-content .small-image {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 100%;
+      }
+
+      .main-content .right-content {
+        background-color: blue;
+        width: 60%;
+        margin-left: auto;
+        margin-right: 0;
+      }
+
+      .main-content .description {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      //Exercício 1
+      let firstHeading = document.createElement("h1");
+      firstHeading.innerText = 'Teste';
+      document.body.appendChild(firstHeading);
+
+      //Exercício 2
+
+      let mainContent = document.createElement('div');
+      mainContent.className = 'main-content';
+      document.body.appendChild(mainContent);
+      
+     //Exercício 3
+      let centerContent = document.createElement('div');
+      centerContent.className = 'center-content';
+      mainContent.appendChild(centerContent);
+
+      //Exercício 4
+      let text1 = document.createElement('p');
+      text1.innerText =  'Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, voluptate? Reprehenderit, ipsam! Adipisci quasi quis impedit illum aperiam facere! Aut architecto vel reprehenderit, perspiciatis eum voluptate quam. Vero, in ullam.';
+      centerContent.appendChild(text1);
+       
+      //Exercicio 5
+      let leftContent = document.createElement('div');
+      leftContent.className = 'left-content';
+      mainContent.appendChild(leftContent);
+
+      //Exercicio 6
+      let rightContent = document.createElement('div');
+      rightContent.className = 'right-content';
+      mainContent.appendChild(rightContent);
+      
+      //Exercicio 7
+      let imageContent = document.createElement("img");
+      imageContent.src = 'https://picsum.photos/200';
+      imageContent.className = 'small-image';
+      leftContent.appendChild(imageContent);
+       
+      //Exercicio 8
+      let ul = document.createElement('ul');
+      let numbersNames = ['Um', 'Dois', 'Três', 'Quatro', 'Cinco', 'Seis', 'Sete', 'Oito', 'Nove', 'Dez'];
+      
+      for (let index of numbersNames) {
+        let li = document.createElement("li");
+        li.innerText = index;
+        ul.appendChild(li);
+      }
+      rightContent.appendChild(ul); 
+      
+      //Exercicio 9
+      let firstSubtitle = document.createElement('h3');
+      let secondSubtitle = document.createElement('h3');
+      let thirdSubtitle = document.createElement('h3');
+      firstSubtitle.innerText = 'LOREM'
+      secondSubtitle.innerText = 'IPSUM'
+      thirdSubtitle.innerText = 'DOLOR'
+      mainContent.appendChild(firstSubtitle);
+      mainContent.appendChild(secondSubtitle);
+      mainContent.appendChild(thirdSubtitle);
+
+      //Parte 2 - Exercicio 1
+      firstHeading.className = 'title';
+      
+      //Parte 2 - Exercicio 2
+      firstSubtitle.className = 'description';
+      secondSubtitle.className = 'description';
+      thirdSubtitle.className = 'description';
+
+      //Parte 2 - Exercicio 3
+      mainContent.removeChild(leftContent);
+
+      //Parte 2 - Exercicio 4
+      rightContent.style.marginRight = 'auto';
+
+      //Parte 2 - Exercicio 5
+      centerContent.style.backgroundColor = 'green';
+
+      //Parte 3 - Exercicio 6
+      ul.lastChild.remove();
+      
+    </script>
+  </body>
+</html>

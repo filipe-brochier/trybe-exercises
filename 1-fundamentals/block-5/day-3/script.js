@@ -54,3 +54,12 @@ function createButton(string) {
 }
 
 createButton('Feriados');
+
+//Exercicio 3
+button.addEventListener('click', mudaCorFeriado);
+
+function mudaCorFeriado() {
+  for (let index of document.getElementsByClassName('holiday')){
+      index.style.backgroundColor = 'green'; 
+  }
+}

@@ -93,6 +93,18 @@
       imageContent.src = 'https://picsum.photos/200';
       imageContent.className = 'small-image';
       leftContent.appendChild(imageContent);
+       
+      //Exercicio 8
+      let ul = document.createElement('ul');
+      let numbersNames = ['Um', 'Dois', 'Três', 'Quatro', 'Cinco', 'Seis', 'Sete', 'Oito', 'Nove', 'Dez'];
+      
+      for (let index of numbersNames) {
+        let li = document.createElement("li");
+        li.innerText = index;
+        ul.appendChild(li);
+      }
+      rightContent.appendChild(ul); 
+      
     </script>
   </body>
 </html>

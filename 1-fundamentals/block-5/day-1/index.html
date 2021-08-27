@@ -92,6 +92,14 @@
         }
         changeParagraphsToLowerCase();
 
+        function showParagraphsInConsole() {
+          let paragraphList = document.getElementsByTagName('p');
+          for (let i = 0; i < paragraphList.length; i += 1){
+            console.log(paragraphList[i].innerText);
+          }
+        }
+        showParagraphsInConsole();
+
     </script>
   </body>
 </html>

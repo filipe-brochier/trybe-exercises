@@ -51,3 +51,11 @@ p {
   text-align: justify;
   padding: 15px 0;
 }
+
+aside {
+  position: fixed;
+  border: dotted 1px black;
+  width: fit-content;
+  padding: 50px 5px;
+  top: 450px;
+}

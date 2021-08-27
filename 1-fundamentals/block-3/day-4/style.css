@@ -7,6 +7,7 @@
 
 body {
   font-family: 'Montserrat', sans-serif;
+  background-color: aquamarine;
 }
 
 a {
@@ -55,7 +56,12 @@ p {
 aside {
   position: fixed;
   border: dotted 1px black;
-  width: fit-content;
+  width: 100px;
   padding: 50px 5px;
   top: 450px;
+}
+
+footer {
+  text-align: center;
+  padding: 15px;
 }

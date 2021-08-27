@@ -1,6 +1,5 @@
 const dezDaysList = [29, 30, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31];
 const divButton = document.querySelector('.buttons-container');
-const button = document.createElement('button');
 
 function createDaysOfTheWeek() {
   const weekDays = ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado']
@@ -51,19 +50,23 @@ createDaysofTheMonth();
 
 //Exercicio 2
 
-function createButton(string) {
+function createButton(string, id) {
+  let button = document.createElement('button');
   button.innerText = string;
-  button.id = 'btn-holiday';
+  button.id = id;
   document.querySelector('.buttons-container').appendChild(button);
 }
 
-createButton('Feriados');
+createButton('Feriados', 'btn-holiday');
 
 //Exercicio 3
-button.addEventListener('click', mudaCorFeriado);
+document.querySelector('#btn-holiday').addEventListener('click', mudaCorFeriado);
 
 function mudaCorFeriado() {
   for (let index of document.getElementsByClassName('holiday')){
       index.style.backgroundColor = 'green'; 
   }
 }
+
+//Exercicio 4
+createButton('Sexta-feira', 'btn-friday');

@@ -41,3 +41,5 @@ function construirListaEstados() {
   }
 }
 construirListaEstados();
+
+validation.init();

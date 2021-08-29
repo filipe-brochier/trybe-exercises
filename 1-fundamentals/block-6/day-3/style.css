@@ -24,6 +24,25 @@ header {
   padding: 0.5rem;
 }
 
+#techs {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 10px auto 13px auto;
+  width: 50%;
+}
+
+#techs h4{
+  text-align: center;
+}
+
+#techs div {
+  padding: 0.5rem;
+  margin: 0.05rem;
+  border-radius: 15px;
+  box-shadow: 2px 3px rgba(161, 161, 161, 0.5);  
+}
+
 .gallery-img {
   width: 150px;
 }

@@ -1,0 +1,14 @@
+* {
+  margin: 0%;
+  padding: 0%;
+  font-family: sans-serif;
+}
+
+header {
+  text-align: center;
+}
+
+body {
+  margin: auto;
+  width: 80%;
+}

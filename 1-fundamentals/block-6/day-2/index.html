@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/pikaday/css/pikaday.css">
   <link rel="stylesheet" href="style.css">
   <title>Formulário de Currículo</title>
 </head>
+
 <body>
   <header>
     <h1>Formulário de Currículo</h1>
@@ -15,36 +18,37 @@
   <form action="" method="get">
     <fieldset>
       <legend>Dados pessoais</legend>
-      
+
       <div>
         <label for="full-name">Nome: </label>
-        <input type="text" placeholder="Digite seu nome completo" required name="full-name" id="full-name" maxlength="40">
+        <input type="text" placeholder="Digite seu nome completo" required name="full-name" id="full-name"
+          maxlength="40">
       </div>
-      
+
       <div>
         <label for="email">Email: </label>
         <input type="text" required maxlength="40" name="email" id="email">
       </div>
-      
+
       <div>
         <label for="cpf">CPF: </label>
-        <input type = "text" required maxlength="11" placeholder="Somente números" name="cpf" id="cpf">
+        <input type="text" required maxlength="11" placeholder="Somente números" name="cpf" id="cpf">
       </div>
-      
+
       <div>
         <label for="endereco">Endereço: </label>
         <input type="text" required maxlength="200" name="endereco" id="endereco">
       </div>
-      
+
       <div>
         <label for="cidade">Cidade: </label>
         <input type="text" required maxlength="28" name="endereco" id="endereco">
       </div>
-      
+
       <div>
         <label for="estado">Estado: </label>
         <select name="estado" id="estado">
-        
+
         </select>
         <br>
       </div>
@@ -65,7 +69,8 @@
 
       <div>
         <label for="resumo">Resumo: </label><br>
-        <textarea name="resumo" id="resumo" cols="75" rows="10" required maxlength="1000" placeholder="Resuma, em até 1000 caractéres, a sua trajetória profissional."></textarea>
+        <textarea name="resumo" id="resumo" cols="75" rows="10" required maxlength="1000"
+          placeholder="Resuma, em até 1000 caractéres, a sua trajetória profissional."></textarea>
       </div>
 
       <div>
@@ -80,12 +85,18 @@
 
       <div>
         <label for="data-inicio">Data de Início</label>
-        <input type="text" required>
+        <input type="text" id='datepicker' required>
       </div>
 
     </fieldset>
     <button type="submit">Enviar</button>
   </form>
-<script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/pikaday/pikaday.js"></script>
+  <script src="pikaday.js"></script>
+  <script>
+    var picker = new Pikaday({ field: document.getElementById('datepicker'), format: 'DD/MM/YYYY' });
+  </script>
+  <script src="script.js"></script>
 </body>
+
 </html>

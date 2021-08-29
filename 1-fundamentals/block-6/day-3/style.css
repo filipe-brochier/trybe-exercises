@@ -18,6 +18,12 @@ header {
   width: 50px;
 }
 
+#subtitle {
+  display:flex;
+  justify-content: center;
+  padding: 0.5rem;
+}
+
 .gallery-img {
   width: 150px;
 }

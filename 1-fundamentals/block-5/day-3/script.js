@@ -133,8 +133,12 @@ createNewTaskDiv('red');
 
 function activateListener() {
   const tasks = document.querySelectorAll('.task');
+  const days = document.querySelectorAll('.day');
   for (let task of tasks) {
     task.addEventListener('click', addTaskSelectedClass);
+  }
+  for(let index of days) {
+    index.addEventListener('click', highlightDay);
   }
 }
 
@@ -149,5 +153,16 @@ function addTaskSelectedClass(event) {
 }
 
 document.querySelector('.taskDiv').addEventListener('click', activateListener);
+
+// Exercicio 10
+
+function highlightDay(event) {
+  const taskDivColor = document.querySelector('.taskDiv').style.backgroundColor;
+  if (event.target.style.color === taskDivColor) {
+    event.target.style.color = 'rgb(119,119,119)';
+  } else {
+    event.target.style.color = 'red';
+  }
+}
 
 window.onload = dayListeners();

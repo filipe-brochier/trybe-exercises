@@ -106,12 +106,28 @@ function dayListeners() {
 // Exercicio 7
 
 function createTask() {
-  const span = document.createElement('span');
+  const li = document.createElement('li');
   const taskText = document.querySelector('#task-input').value;
-  span.innerHTML = taskText + '<br>';
-  document.querySelector('.my-tasks').appendChild(span);
+  li.innerHTML = taskText;
+  li.style.listStyle = 'none';
+  document.querySelector('.my-tasks').appendChild(li);
 }
 
 document.querySelector('#btn-add').addEventListener('click', createTask);
+
+// Exercício 8
+function createNewTaskDiv(color) {
+
+  const tasks = document.querySelector('.my-tasks');
+  const div = document.createElement('div');
+
+  div.className = 'task';
+  div.style.backgroundColor = color;
+  tasks.appendChild(div);
+};
+
+createNewTaskDiv('green');
+
+
 
 window.onload = dayListeners();

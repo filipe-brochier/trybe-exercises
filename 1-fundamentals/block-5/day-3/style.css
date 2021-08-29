@@ -93,7 +93,7 @@ label {
   width: 45px;
 }
 
-.my-tasks span {
+.my-tasks li {
   color: #666;
   font-size: 18px;
   font-weight: 500;

@@ -30,13 +30,13 @@ function createDaysofTheMonth() {
       case 31:
         day.classList.add('holiday');
         break;
-      
-      case 4: 
-      case 11: 
+
+      case 4:
+      case 11:
       case 18:
         day.classList.add('friday');
         break;
-      
+
       case 25:
         day.classList.add('holiday');
         day.classList.add('friday');
@@ -63,8 +63,8 @@ createButton('Feriados', 'btn-holiday');
 document.querySelector('#btn-holiday').addEventListener('click', mudaCorFeriado);
 
 function mudaCorFeriado() {
-  for (let index of document.getElementsByClassName('holiday')){
-      index.style.backgroundColor = 'green'; 
+  for (let index of document.getElementsByClassName('holiday')) {
+    index.style.backgroundColor = 'green';
   }
 }
 
@@ -78,7 +78,7 @@ function highlightFriday() {
     if (fridayList[i].style.color === 'blue') {
       fridayList[i].style.color = 'grey';
     } else {
-    fridayList[i].style.color = 'blue';
+      fridayList[i].style.color = 'blue';
     }
   }
 }
@@ -87,7 +87,7 @@ document.querySelector('#btn-friday').addEventListener('click', highlightFriday)
 
 // Exercicio 6
 
-function zoomIn (event) {
+function zoomIn(event) {
   if (event.target.style.fontSize === '32px') {
     event.target.style.fontSize = '20px';
   } else {
@@ -108,7 +108,8 @@ function dayListeners() {
 function createTask() {
   const li = document.createElement('li');
   const taskText = document.querySelector('#task-input').value;
-  li.innerHTML = taskText;
+  li.innerHTML = taskText + '<br>';
+  li.classList.add('task');
   li.style.listStyle = 'none';
   document.querySelector('.my-tasks').appendChild(li);
 }
@@ -121,13 +122,32 @@ function createNewTaskDiv(color) {
   const tasks = document.querySelector('.my-tasks');
   const div = document.createElement('div');
 
-  div.className = 'task';
+  div.className = 'taskDiv';
   div.style.backgroundColor = color;
   tasks.appendChild(div);
 };
 
-createNewTaskDiv('green');
+createNewTaskDiv('red');
 
+// Exercício 9
 
+function activateListener() {
+  const tasks = document.querySelectorAll('.task');
+  for (let task of tasks) {
+    task.addEventListener('click', addTaskSelectedClass);
+  }
+}
+
+function addTaskSelectedClass(event) {
+  if (event.target.classList.value.includes('selected')) {
+    event.target.classList.remove('selected');
+    event.target.style.backgroundColor = document.querySelector('body').style.backgroundColor;
+  } else {
+    event.target.classList.add('selected');
+    event.target.style.backgroundColor = document.querySelector('.taskDiv').style.backgroundColor;
+  }
+}
+
+document.querySelector('.taskDiv').addEventListener('click', activateListener);
 
 window.onload = dayListeners();

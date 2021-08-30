@@ -96,3 +96,37 @@
     display: block;
   }
 }
+
+@media screen and (max-width: 768px) {
+  #aside {
+    display: none;
+  }
+
+  body {
+    padding: 0;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  #navigation {
+    margin-top: 75px;
+    text-align: center;
+  }
+  
+  #navigation ul li {
+    display:block;
+  }
+
+  #navigation ul li a {
+    float: none;
+  }
+
+  #header {
+    position: fixed;
+    width: 100%;
+    height: 35px;
+    text-align: center;
+  }
+}

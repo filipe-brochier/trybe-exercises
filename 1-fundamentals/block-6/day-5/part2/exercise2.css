@@ -61,3 +61,17 @@ footer h3 {
   text-align: center;
 }
 
+@media screen and (max-width: 411px) {
+  h1 {
+    font-size: 1.2em;
+  }
+  .chapters-and-info {
+    font-size: 0.75rem;
+    flex-direction: column-reverse;
+    padding: 0.5em 0;
+    align-items: center;
+  }
+  .chapters-and-info .aside-one {
+    padding: 20px;
+  }
+}

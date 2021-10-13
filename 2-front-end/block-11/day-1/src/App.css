@@ -1,3 +1,11 @@
 .App {
   text-align: center;
 }
+
+.pokemon-type-button {
+  background-color: orange;
+  color: white;
+  font-size: 15px;
+  font-weight: 598;
+  text-align: center;
+}

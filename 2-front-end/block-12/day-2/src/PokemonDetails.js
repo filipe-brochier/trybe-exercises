@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import pokemons from './data';
 
 class PokemonDetails extends React.Component {
@@ -7,6 +8,11 @@ class PokemonDetails extends React.Component {
     const { name, type, averageWeight, image, summary, foundAt } = pokemons.find(pokemon => pokemon.id === Number(id)); 
     return ( 
       <>
+        <div style={ { textAlign: "center"} }>
+          <Link to="/">
+            Voltar ao início
+          </Link>
+        </div>
         <div className="pokemon">
           <div>
             <p>{name}</p>

@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import redSignal from './images/redSignal.jpeg';
 import greenSignal from './images/greenSignal.jpeg';
 import yellowSignal from './images/yellowSignal.jpeg';
-import { changeSignal } from './redux/actionCreators';
+import { changeSignal } from './actions/actionCreators';
 
 class TrafficSignal extends React.Component {
   constructor() {
@@ -58,7 +58,7 @@ class TrafficSignal extends React.Component {
 }
 
 const mapStateToProps = (state) => ({
-  signalColor: state.signal.color,
+  signalColor: state.signalReducer.signal.color,
 });
 
 const mapDispatchToProps = (dispatch) => ({

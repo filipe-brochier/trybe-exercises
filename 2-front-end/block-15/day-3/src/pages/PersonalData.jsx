@@ -1,5 +1,7 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { savePersonalData } from '../actions';
 
 class PersonalData extends React.Component {
   constructor() {
@@ -45,6 +47,7 @@ class PersonalData extends React.Component {
     }
   }
   render() {
+    const { sendPersonalData } = this.props;
     return (
       <>
         <fieldset>
@@ -88,7 +91,7 @@ class PersonalData extends React.Component {
           </select>
         </fieldset>
         <Link to="/professionalForm">
-          <button>
+          <button onClick={() => sendPersonalData(this.state)}>
             Próximo
           </button>
         </Link>
@@ -96,5 +99,12 @@ class PersonalData extends React.Component {
     )
   }
 }
+const mapDispatchToProps = (dispatch) => {
+  return {
+    sendPersonalData: (payload) => {
+      dispatch(savePersonalData(payload))
+    }
+  }
+}
 
-export default PersonalData;
+export default connect(null, mapDispatchToProps)(PersonalData);

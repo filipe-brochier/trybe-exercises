@@ -1,9 +1,16 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { saveProfessionalData } from '../actions';
 
 class ProfessionalData extends React.Component {
   constructor() {
     super();
+    this.state = {
+      resume: '',
+      job: '',
+      jobDescription: '',
+    }
     this.generateTextArea = this.generateTextArea.bind(this);
     this.handleChange = this.handleChange.bind(this);
   }
@@ -32,6 +39,7 @@ class ProfessionalData extends React.Component {
   }
 
   render() {
+    const { sendProfessionalData } = this.props;
     return (
       <>
         <fieldset>
@@ -40,12 +48,19 @@ class ProfessionalData extends React.Component {
           { this.generateTextArea('job', 'Cargo: ', 40)}
           { this.generateTextArea('jobDescription', 'Descrição do cargo: ', 500)}
         </fieldset>
-        <Link to="/formDisplay">
-          <button>Enviar</button>
+        <Link to="/formDataDisplay">
+          <button onClick={ () => sendProfessionalData(this.state) }>Enviar</button>
         </Link>
       </>
-    )
+    );
   }
 }
 
-export default ProfessionalData;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    sendProfessionalData: (payload) => {
+      dispatch(saveProfessionalData(payload))
+    }
+  }
+}
+export default connect(null, mapDispatchToProps)(ProfessionalData);
